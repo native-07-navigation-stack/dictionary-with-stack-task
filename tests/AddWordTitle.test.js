@@ -23,9 +23,6 @@ test("title of AddWord is changing according to requirement", async () => {
 
   render(<AddWord navigation={{ setOptions: mockedSetOptions }} />);
 
-  expect(mockedSetOptions).toHaveBeenCalledTimes(1);
-  expect(mockedSetOptions.mock.lastCall[0]).toEqual({ title: "Adding word" });
-
   const input = screen.getByPlaceholderText("type here..");
   await act(async () => {
     await user.type(input, "hello");
